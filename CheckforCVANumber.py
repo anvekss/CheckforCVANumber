@@ -47,9 +47,9 @@ AtifactoryBuild = getzipurllocation(ArtifactoryLocation)
 
 if (InstalledBuild == AtifactoryBuild ):
     print("Both the Build matches")
-    exit(200)
+    exit("PASS")
 else:
     print("Builds are different")
-    exit(480)
+    exit("FAIL")
    
 
