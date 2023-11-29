@@ -23,6 +23,7 @@ def getCVAdapterVersion(buildinstalllocation):
     buildinfo = buildinfo.replace('x86e_win64' , "")
     Build = re.findall("[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]", buildinfo )
     Build = Build[0].strip()
+    print("CVA build is " , Build )
     return (Build)
 
 def getzipurllocation(zipurl):
@@ -38,6 +39,7 @@ def getzipurllocation(zipurl):
     Build = re.findall("[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9].zip", finalurl )
     Build = Build[0].replace('.zip' , "")
     Build = Build.strip()
+    print("Artifactory build is " , Build )
     return (Build)
 
 InstalledBuild = getCVAdapterVersion(buildinstalllocation)
