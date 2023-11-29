@@ -50,6 +50,6 @@ if (InstalledBuild == AtifactoryBuild ):
     exit(0)
 else:
     print("Builds are different")
-    exit(0)
+    exit(1)
    
 
