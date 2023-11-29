@@ -50,6 +50,6 @@ if (InstalledBuild == AtifactoryBuild ):
     exit("PASS")
 else:
     print("Builds are different")
-    exit("FAIL")
+    exit("DELHI")
    
 
