@@ -22,8 +22,8 @@ def getCVAdapterVersion(buildinstalllocation):
     buildinfo = buildinfo[0].replace('Build' , "")
     buildinfo = buildinfo.replace('x86e_win64' , "")
     Build = re.findall("[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]", buildinfo )
-    print (Build[0])
-    return (Build[0])
+    Build = Build[0].strip()
+    return (Build)
 
 def getzipurllocation(zipurl):
     http = urllib3.PoolManager()
@@ -37,18 +37,15 @@ def getzipurllocation(zipurl):
     print("URL==" , finalurl)
     Build = re.findall("[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9].zip", finalurl )
     Build = Build[0].replace('.zip' , "")
-    print(Build)
+    Build = Build.strip()
     return (Build)
-
-print(getCVAdapterVersion(buildinstalllocation))  
-print(getzipurllocation(ArtifactoryLocation))
 
 InstalledBuild = getCVAdapterVersion(buildinstalllocation)
 AtifactoryBuild = getzipurllocation(ArtifactoryLocation)
 
 if (InstalledBuild == AtifactoryBuild ):
-    print("success")
+    print("Both the Build matches")
 else:
-    print("fail")
+    print("Builds are different")
    
 
