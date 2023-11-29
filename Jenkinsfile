@@ -2,7 +2,7 @@ pipeline {
    agent {
     node {
        label 'pnx-wcqa04d'
-         customWorkspace ''
+      
        }
     }
     
