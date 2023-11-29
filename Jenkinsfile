@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Hello World'
                 bat 'python CheckforCVANumber.py'
-                echo %ERRORLEVEL%
+                echo '%ERRORLEVEL%'
             }
         }
     }
